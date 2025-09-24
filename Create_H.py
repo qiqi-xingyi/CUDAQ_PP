@@ -4,7 +4,6 @@
 # @Email : yzhan135@kent.edu
 # @File:Create_H.py
 
-
 from Protein_Folding import Peptide
 from Protein_Folding.interactions.miyazawa_jernigan_interaction import MiyazawaJerniganInteraction
 from Protein_Folding.penalty_parameters import PenaltyParameters
