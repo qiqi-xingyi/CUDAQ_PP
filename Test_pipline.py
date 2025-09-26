@@ -6,7 +6,7 @@
 
 from qiskit.quantum_info import SparsePauliOp
 from SQD import PrepBuilder, PrepConfig, QuantumExecutor, QuantumConfig, ClassicalPostProcessor
-
+from qiskit_ibm_runtime import QiskitRuntimeService
 from Protein_Folding import Peptide
 from Protein_Folding.interactions.miyazawa_jernigan_interaction import MiyazawaJerniganInteraction
 from Protein_Folding.penalty_parameters import PenaltyParameters
@@ -57,6 +57,13 @@ if __name__ == '__main__':
         grouped_observables.append(obs)
 
     # 2) Quantum layer: run on IBM QPU
+
+    service = QiskitRuntimeService(
+        channel="ibm_quantum_platform",
+        instance="ibm_cleveland",
+        token="TOKEN"
+    )
+
     qexec = QuantumExecutor(workdir="sqd_run", backend_name="ibm_<device>")
     qcfg = QuantumConfig(workdir="sqd_run", total_shots=60000, sampler_shots=100000, resilience_level=1)
 
@@ -65,7 +72,7 @@ if __name__ == '__main__':
         grouped_observables=grouped_observables,
         coeffs=prep.coeffs,
         cfg=qcfg,
-        initial_layout=None,  # optional physical mapping
+        initial_layout=None,
     )
     print("Energy =", energy_report.energy)
 
