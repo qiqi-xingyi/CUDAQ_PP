@@ -4,4 +4,20 @@
 # @Email : yzhan135@kent.edu
 # @File:__init__.py.py
 
-from .proteinSQD import proteinSQD
+# Re-export public classes for convenient imports like: from SQD import PrepBuilder, QuantumExecutor, ClassicalPostProcessor
+from .prep import PrepBuilder, PrepConfig
+from .quantum import QuantumExecutor, QuantumConfig, EnergyReport, SampleReport
+from .classical import ClassicalPostProcessor, SubspaceResult, DecodeResult, EvalReport
+
+__all__ = [
+    "PrepBuilder",
+    "PrepConfig",
+    "QuantumExecutor",
+    "QuantumConfig",
+    "EnergyReport",
+    "SampleReport",
+    "ClassicalPostProcessor",
+    "SubspaceResult",
+    "DecodeResult",
+    "EvalReport",
+]
