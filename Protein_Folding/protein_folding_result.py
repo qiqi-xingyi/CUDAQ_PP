@@ -159,6 +159,7 @@ class ProteinFoldingResult:
             name=name, path=path, comment=comment, replace=replace
         )
 
+
     @_optionals.HAS_MATPLOTLIB.require_in_call
     def get_figure(
         self, title: str = "Protein Structure", ticks: bool = False, grid: bool = False
