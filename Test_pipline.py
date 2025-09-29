@@ -12,9 +12,11 @@ from Protein_Folding.interactions.miyazawa_jernigan_interaction import MiyazawaJ
 from Protein_Folding.penalty_parameters import PenaltyParameters
 from Protein_Folding.protein_folding_problem import ProteinFoldingProblem
 
+
 main_chain_residue_seq = "YAGYS"
 side_chain_residue_sequences = ['' for _ in range(len(main_chain_residue_seq))]
 protein_name = '6mu3'
+
 
 if __name__ == '__main__':
 
