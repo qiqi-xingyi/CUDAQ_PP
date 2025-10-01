@@ -4,7 +4,6 @@
 # @Email : yzhan135@kent.edu
 # @File:Test_pipline.py
 
-
 from qiskit.quantum_info import SparsePauliOp
 from SQD import PrepBuilder, PrepConfig, QuantumExecutor, QuantumConfig, ClassicalPostProcessor
 from qiskit_ibm_runtime import QiskitRuntimeService
