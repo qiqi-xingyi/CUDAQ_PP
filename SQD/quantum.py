@@ -45,6 +45,7 @@ class EnergyReport:
     def to_json(self) -> str:
         return json.dumps(asdict(self), indent=2)
 
+
 @dataclass
 class SampleReport:
     backend_name: str
