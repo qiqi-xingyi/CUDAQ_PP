@@ -84,6 +84,7 @@ if __name__ == '__main__':
     )
     counts = sample_report.counts
 
+
     # 3) Classical layer: subspace + decode + evaluate
     post = ClassicalPostProcessor(workdir="sqd_run")
     subspace = post.subspace_pipeline(H, counts, top_k=500, mass_threshold=0.95)
